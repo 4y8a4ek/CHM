@@ -17,11 +17,13 @@ int main(){
         A.setElement(i, i, 100.0);
     }
 
-//LU DECOMPOSITION
     Matrix b(n, 1);
     for(int i = 0; i < n ; i++)
         b.setElement(i, 0, 1.0);
     Matrix f = A*b;
+
+//LU DECOMPOSITION
+
     auto startLU = std::chrono::high_resolution_clock::now();
     Matrix xlu = solveSystemUsingLU(A, n, f);
     auto endLU = std::chrono::high_resolution_clock::now();
