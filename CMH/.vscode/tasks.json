@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build_main_and_class",
+            "type": "shell",
+            "command": "g++ -o programm.exe Solvers/*.cpp *.cpp Classes/*.cpp Else/*.cpp",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
