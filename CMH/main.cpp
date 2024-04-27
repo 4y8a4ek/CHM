@@ -8,7 +8,7 @@ using namespace std;
 
 
 int main(){
-    const int n = 800;
+    const int n = 100;
     Matrix A(n,n);
     for( int i = 0; i < n; i++){
         for(int j = 0; j < n; j++){
@@ -42,6 +42,17 @@ int main(){
 
     double erorr_QR = Erorr(xqr, b, n);
     cout << "Erorr for QR: " << erorr_QR  << endl;
+
+
+//SVD MNK
+    auto startSVD = std::chrono::high_resolution_clock::now();
+    Matrix xsvd = solveLinearSystemQR(A, f, n);
+    auto endSVD = std::chrono::high_resolution_clock::now();
+    auto est_SVD_time = std::chrono::duration_cast<std::chrono::milliseconds>(endSVD - startSVD).count()/1000.0;
+    std::cout << "Time SVD taken: " << est_SVD_time << " seconds" << std::endl;
+
+    double erorr_SVD = Erorr(xsvd, b, n);
+    cout << "Erorr for SVD: " << erorr_SVD << endl;
 
     return 0;
 }
