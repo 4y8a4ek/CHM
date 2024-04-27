@@ -2,6 +2,7 @@
 #include "./Solvers/LUDecomposition.h"
 #include "./Else/else.h"
 #include "./Solvers/QRDecomposition.h"
+#include "./Solvers/SVDMNK.h"
 #include <iostream>
 #include <chrono>
 using namespace std;
